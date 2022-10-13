@@ -1,0 +1,148 @@
+
+
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+
+
+{% block content %}
+
+
+
+
+
+
+    <div id="page-wraper">
+      
+        <!-- Sidebar Menu -->
+        <div class="responsive-nav">
+          <i class="fa fa-bars" id="menu-toggle"></i>
+          <div id="menu" class="menu">
+            <i class="fa fa-times" id="menu-close"></i>
+            <div class="container">
+              <div class="image">
+                <a href="#"><img src="{% static 'images/mash3.jpg' %}" alt="" /></a>
+              </div>
+              <div class="author-content">
+                <h4>Masrafe Rahman</h4>
+                <span>Full Stack Developer and QA Engineer</span>
+              </div>
+              <nav class="main-nav" role="navigation">
+                <ul class="main-menu">
+                  <li><a href="#section1">About Me</a></li>
+                  <li><a href="#section2">What I’m good at</a></li>
+                  <li><a href="#section3">My Work</a></li>
+                  <li><a href="#section4">Contact Me</a></li>
+                </ul>
+              </nav>
+            <div class="social-network">
+              <ul class="soial-icons">
+                <li>
+                  <a href="https://fb.com/masrafe.tuhin"
+                    ><i class="fa fa-facebook"></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fa fa-twitter"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fa fa-linkedin"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fa fa-dribbble"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fa fa-rss"></i></a>
+                </li>
+              </ul>
+            </div>
+            <div class="copyright-text">
+              <p>this django blog developed by masrafe</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <section class="section about-me" data-section="section1">
+        <div class="container">
+          <div class="section-heading">
+            <h2>About Me</h2>
+            <div class="line-dec"></div>
+            <span></span>
+              Core Python expertise. Familiarity with web
+              services and REST API. Knowledge of web Python
+              frameworks: Django or Flask. Understanding of
+              ORM libraries, databases, and SQL. Expertise in
+              web backend and frontend.
+              Advance Quality Assurance Engineer
+              </span>
+            
+          </div>
+          <div class="left-image-post">
+            {% for b in myabout %}
+            <div class="row">
+              <div class="col-md-6">
+                <div class="left-image">
+                  <img src="{{ b.img1.url }}" alt="" />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="right-text">
+                  <h4>{{ b.title1 }}</h4>
+                  <p>
+                    {{ b.dis1 }}
+                  </p>
+                  <div class="white-button">
+                    <a href="#">Read More</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="right-image-post">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="left-text">
+                  <h4>{{ b.title2 }}</h4>
+                  <p>
+                    {{ b.dis2 }}
+                  </p>
+                  <div class="white-button">
+                    <a href="#">Read More</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="right-image">
+                  <img src="{{ b.img2.url }}" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </section>
+
+      {% include 'services.html' %}
+
+      {% include 'work.html' %}
+     
+      
+      {% include 'contact.html' %}
+
+      
+    </div>
+    </div>
+
+    <!-- Scripts -->
+    <!-- Bootstrap core JavaScript -->
+    
+    {% endblock %}
+
+
+
+
+
+
